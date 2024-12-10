@@ -30,7 +30,8 @@ const products = [
   }
   
   // Update cart display
-  function updateCart() {
+  // Update cart display
+function updateCart() {
     const cartItems = document.querySelector(".cart-items");
     cartItems.innerHTML = "";
   
@@ -49,17 +50,12 @@ const products = [
       cartItems.appendChild(cartItem);
     });
   
+    // Enable checkout button when there are items in the cart
     document.querySelector(".checkout-btn").disabled = false;
   }
   
-  // Remove product from the cart
-  function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCart();
-  }
-  
   // Checkout function
-function checkout() {
+  function checkout() {
     const userName = document.getElementById("userName").value.trim();
   
     if (!userName) {
@@ -78,10 +74,49 @@ function checkout() {
     alert(`Thank you, ${userName}! Your order of $${total} has been placed.`);
   
     // Clear the cart
-    cart.length = 0;
+    cart.length = 0;  // This empties the cart
+  
+    // Update the cart display
     updateCart();
   
     // Reset user input
     document.getElementById("userName").value = "";
   }
+  
+  
+  // Remove product from the cart
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+  }
+  
+  // Checkout function
+  function checkout() {
+    const userName = document.getElementById("userName").value.trim();
+
+    if (!userName) {
+      alert("Please enter your name to proceed with checkout!");
+      return;
+    }
+
+    if (cart.length === 0) {
+      alert("Your cart is empty. Add some products before checking out.");
+      return;
+    }
+
+    let total = cart.reduce((sum, item) => sum + item.price, 0);
+
+    // Simulate checkout
+    alert(`Thank you, ${userName}! Your order of $${total} has been placed.`);
+
+    // Clear the cart
+    cart.length = 0;  // This empties the cart
+
+    // Update the cart display
+    updateCart();
+
+    // Reset user input
+    document.getElementById("userName").value = "";
+}
+
   
