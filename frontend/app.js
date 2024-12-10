@@ -30,8 +30,7 @@ const products = [
   }
   
   // Update cart display
-  // Update cart display
-function updateCart() {
+  function updateCart() {
     const cartItems = document.querySelector(".cart-items");
     cartItems.innerHTML = "";
   
@@ -54,36 +53,6 @@ function updateCart() {
     document.querySelector(".checkout-btn").disabled = false;
   }
   
-  // Checkout function
-  function checkout() {
-    const userName = document.getElementById("userName").value.trim();
-  
-    if (!userName) {
-      alert("Please enter your name to proceed with checkout!");
-      return;
-    }
-  
-    if (cart.length === 0) {
-      alert("Your cart is empty. Add some products before checking out.");
-      return;
-    }
-  
-    let total = cart.reduce((sum, item) => sum + item.price, 0);
-  
-    // Simulate checkout
-    alert(`Thank you, ${userName}! Your order of $${total} has been placed.`);
-  
-    // Clear the cart
-    cart.length = 0;  // This empties the cart
-  
-    // Update the cart display
-    updateCart();
-  
-    // Reset user input
-    document.getElementById("userName").value = "";
-  }
-  
-  
   // Remove product from the cart
   function removeFromCart(index) {
     cart.splice(index, 1);
@@ -93,30 +62,29 @@ function updateCart() {
   // Checkout function
   function checkout() {
     const userName = document.getElementById("userName").value.trim();
-
+  
     if (!userName) {
       alert("Please enter your name to proceed with checkout!");
       return;
     }
-
+  
     if (cart.length === 0) {
       alert("Your cart is empty. Add some products before checking out.");
       return;
     }
-
+  
     let total = cart.reduce((sum, item) => sum + item.price, 0);
-
+  
     // Simulate checkout
     alert(`Thank you, ${userName}! Your order of $${total} has been placed.`);
-
+  
     // Clear the cart
     cart.length = 0;  // This empties the cart
-
+  
     // Update the cart display
     updateCart();
-
+  
     // Reset user input
     document.getElementById("userName").value = "";
-}
-
+  }
   
