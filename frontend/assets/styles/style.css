@@ -1,0 +1,143 @@
+/* General Reset */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    line-height: 1.6;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .nav-links a:hover {
+    color: #ffa500;
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+  }
+  
+  /* Products Section */
+  .products {
+    padding: 2rem;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .product-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+    width: 200px;
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .product-card button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .product-card button:hover {
+    background-color: #218838;
+  }
+  
+  /* Cart Section */
+  .cart {
+    padding: 2rem;
+  }
+  
+  .cart-items {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .checkout-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .checkout-btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  @media (max-width: 768px) {
+    .product-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .checkout-input {
+    display: block;
+    width: 80%;
+    padding: 0.5rem;
+    margin: 1rem auto;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .checkout-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .checkout-btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
